@@ -23,6 +23,8 @@ class RaceLocation extends Pivot
      */
     public $table = 'race_location';
 
+    public $timestamps = false;
+
     /** @var string[]  */
     protected $fillable = ['race_id', 'location_id'];
 

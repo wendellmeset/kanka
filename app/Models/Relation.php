@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Builder;
  * Class Relation
  * @package App\Models
  * @property int $id
+ * @property int $campaign_id
  * @property string $relation
  * @property int $attitude
  * @property int|null $mirror_id

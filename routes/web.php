@@ -35,7 +35,6 @@ Route::group([
     Route::get('/troubleshooting/invite', 'TroubleshootingController@invite')->name('troubleshooting');
     Route::post('/troubleshooting/invite', 'TroubleshootingController@saveInvite')->name('troubleshooting.generate');
 
-
     Route::get('users/{user}', 'User\ProfileController@show')->name('users.profile');
 
     // Notification

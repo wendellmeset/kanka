@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CharacterRace extends Model
 {
+    public $table = 'character_race';
     public function character()
     {
         return $this->belongsTo(Character::class);

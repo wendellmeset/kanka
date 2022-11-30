@@ -208,7 +208,9 @@ Route::post('/campaign_users/{campaign_user}/update-role/{campaign_role}', 'Camp
 Route::get('/recovery', 'Campaign\RecoveryController@index')->name('recovery');
 Route::post('/recovery', 'Campaign\RecoveryController@recover')->name('recovery.save');
 
-
+// Duplication
+Route::get('duplicate', [\App\Http\Controllers\Campaign\DuplicateController::class, 'index'])->name('duplicate-campaign');
+Route::post('duplicate', [\App\Http\Controllers\Campaign\DuplicateController::class, 'queue'])->name('duplicate-campaign.queue');
 
 // Stats
 Route::get('/stats', 'Campaign\StatController@index')->name('stats');

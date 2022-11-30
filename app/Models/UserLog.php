@@ -35,6 +35,7 @@ class UserLog extends Model
     public const TYPE_CAMPAIGN_JOIN = 21;
     public const TYPE_CAMPAIGN_LEAVE = 22;
     public const TYPE_CAMPAIGN_DELETE = 23;
+    public const CAMPAIGN_DUPLICATE = 25;
 
     public const TYPE_PASSWORD_UPDATE = 30;
     public const TYPE_PASSWORD_RESET = 31;
@@ -54,6 +55,7 @@ class UserLog extends Model
     public const TYPE_YEARLY_RENEW_WARNING = 81;
     public const TYPE_SUB_CANCEL_MANUAL = 82;
     public const TYPE_SUB_CANCEL_AUTO = 83;
+
 
     /**
      * @var string

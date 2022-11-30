@@ -22,6 +22,7 @@ class CreatureLocation extends Pivot
      * @var string
      */
     public $table = 'creature_location';
+    public $timestamps = false;
 
     /** @var string[]  */
     protected $fillable = ['creature_id', 'location_id'];

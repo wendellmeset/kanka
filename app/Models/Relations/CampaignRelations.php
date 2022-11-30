@@ -3,6 +3,7 @@
 namespace App\Models\Relations;
 
 use App\Models\Ability;
+use App\Models\AttributeTemplate;
 use App\Models\Calendar;
 use App\Models\CampaignDashboard;
 use App\Models\CampaignDashboardWidget;
@@ -116,6 +117,14 @@ trait CampaignRelations
     public function roles()
     {
         return $this->hasMany(CampaignRole::class);
+    }
+
+    /**
+     * @return Character|\Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function attributeTemplates()
+    {
+        return $this->hasMany(AttributeTemplate::class);
     }
 
     /**
