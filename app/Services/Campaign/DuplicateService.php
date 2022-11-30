@@ -230,7 +230,7 @@ class DuplicateService
 
     protected function duplicateEntities(): self
     {
-        $except = ['menu_links', 'relations'];
+        $except = ['menu_links', 'relations', 'conversations', 'dice_rolls'];
         foreach ($this->entityService->entities($except) as $entity => $className) {
             $this->duplicateMisc($entity);
         }
