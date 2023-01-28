@@ -61,4 +61,13 @@ return [
             env('STRIPE_ELEMENTAL_USD_YEARLY'),
         ],
     ],
+
+    'premium' => [
+        'eur' => [
+            'monthly' => env('STRIPE_PREMIUM_USD'),
+        ],
+        'usd' => [
+            'monthly' => env('STRIPE_PREMIUM_USD')
+        ],
+    ],
 ];

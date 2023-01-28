@@ -9,13 +9,45 @@
     </div>
 
     @if (!$cancel)
-        <h4>{!! __('settings.subscription.change.text.' . $period, ['tier' => "<strong>$tier</strong>", 'amount' => "<strong>$amount</strong>"]) !!}</h4>
+        <h4 class="hidden">{!! __('settings.subscription.change.text.' . $period, ['tier' => "<strong>$tier</strong>", 'amount' => "<strong>$amount</strong>"]) !!}</h4>
     @else
         <h4>{!! __('settings.subscription.actions.cancel_sub') !!}</h4>
     @endif
 
     <div class="alert alert-danger" style="display: none"></div>
 
+    <div class="" id="premium-slots">
+        <div class="grid gap-4 grid-cols-2 m-5 text-lg">
+            <div class="text-right">Monthly <strong>Owlbear</strong></div>
+            <div class="">USD 5.00</div>
+
+            <div class="text-right">Included <a href="#">premium campaigns</a></div>
+            <div class=" text-bold">1</div>
+
+            <div class="text-right">Extra premium campaign</div>
+            <div class="text-bold">USD 2.50
+
+                <i class="fa-solid fa-trash text-red ml-1" title="Remove extra premium campaign"></i>
+            </div>
+
+            <div class="text-right">
+                <a href="#" class="btn btn-default btn-sm ">
+                    <i class="fa-solid fa-plus"></i> Add a premium campaign
+                </a>
+            </div>
+            <div></div>
+
+
+            <div class="col-span-2">
+                <hr class="m-0" />
+            </div>
+
+            <div class="text-right font-bold text-uppercase">Monthly total</div>
+            <div class="text-xl">
+                US$ 7.50
+            </div>
+        </div>
+    </div>
 
     @if (!$cancel)
         @if ($hasPromo)
@@ -37,7 +69,7 @@
         @endif
         <div class="card" style="margin: 0">
 
-        <!-- Nav tabs -->
+            <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
                     <a href="#card" aria-controls="home" role="tab" data-toggle="tab">

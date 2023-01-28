@@ -203,8 +203,9 @@ class SubscriptionService
     public function subscribe($planID, $paymentID): self
     {
         // New subscriber
+        $plans = [$planID, config('subscription.premium.usd.monthly')];
         if (!$this->user->subscribed('kanka')) {
-            $this->user->newSubscription('kanka', $planID)
+            $this->user->newSubscription('kanka', $plans)
                 ->withCoupon($this->coupon)
                 ->create($paymentID);
 
@@ -215,10 +216,10 @@ class SubscriptionService
 
         // If going down from elemental to owlbear, keep it as is until the current billing period
         if ($this->downgrading()) {
-            $this->user->subscription('kanka')->swap($planID);
+            $this->user->subscription('kanka')->swap($plans);
             $this->user->log(UserLog::TYPE_SUB_DOWNGRADE);
         } else {
-            $this->user->subscription('kanka')->swapAndInvoice($planID);
+            $this->user->subscription('kanka')->swapAndInvoice($plans);
             $this->user->log(UserLog::TYPE_SUB_UPGRADE);
         }
 
